@@ -1,0 +1,18 @@
+.header {
+  padding: 5px 0;
+}
+
+.header_nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_nav_p {
+  line-height: 38px;
+  transition: 0.3s;
+}
+
+.header_nav_p:hover, .header_nav_p_active {
+  color: #fdce25;
+  line-height: 38px;
+}

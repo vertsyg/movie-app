@@ -1,0 +1,11 @@
+.not_found {
+  height: calc(100vh - 48px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+}
+
+.emoji {
+  font-size: 80px;
+}
