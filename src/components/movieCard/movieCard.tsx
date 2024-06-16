@@ -6,7 +6,7 @@ import styles from './movieCard.module.css'
 export const MovieCard = (movie: TMovie) => {
   return (
     <Link
-      to={`movie/${String(movie.id)}`}
+      to={`/movie/${String(movie.id)}`}
       className={styles.movieCard}
     >
       {

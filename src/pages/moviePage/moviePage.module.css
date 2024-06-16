@@ -60,3 +60,15 @@
   margin-top: 25px;
   font-size: 18px;
 }
+
+.favorites {
+  margin-top: 15px;
+  background-color: #fdce25;
+  border-radius: 8px;
+  height: 40px;
+  border: none;
+  font-size: 18px;
+  padding: 5px;
+  font-weight: 500;
+  cursor: pointer
+}

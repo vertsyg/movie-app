@@ -8,13 +8,21 @@ import calendar from '../../images/calendar.svg'
 import star from '../../images/star.svg'
 import { Loader } from "../../components/loader/loader"
 import { ErrorMessage } from "../../components/erorrMessage/errorMessage"
+import { useAppDispatch, useAppSelector } from "../../types/hooks"
+import { ADD_FAVORITE_MOVIE, DELETE_FAVORITE_MOVIE } from "../../services/actions/favoriteMovies"
+import { getFavoriteMovies } from "../../services/selectors"
 
 export const MoviePage = () => {
   const { movieId } = useParams()
+  const dispatch = useAppDispatch()
+
   const [movie, setMovie] = useState<TMovie | null>(null)
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState('')
   const genres = movie?.genres?.map(genre => genre.name)
+
+  const favoriteMovies = useAppSelector(getFavoriteMovies)
+  const isFavorite = favoriteMovies.some(favMovie => favMovie.id === movie?.id)
   
   useEffect(() => {
     if (movieId) {
@@ -24,6 +32,20 @@ export const MoviePage = () => {
         .finally(() => setLoading(false))
     }
   }, [movieId])
+
+  const handleButtonClick = () => {
+    if (isFavorite) {
+      dispatch({
+        type: DELETE_FAVORITE_MOVIE,
+        movie: movie
+      });
+    } else {
+      dispatch({
+        type: ADD_FAVORITE_MOVIE,
+        movie: movie
+      });
+    }
+  };
 
   return (
     <>
@@ -47,6 +69,12 @@ export const MoviePage = () => {
               </div>
             </div>
             <p className={styles.description}>{movie.description}</p>
+            <button 
+              className={styles.favorites}
+              onClick={handleButtonClick}
+            >
+              {isFavorite ? '- Удалить из избранного' : '+ Добавить в избранное'}
+            </button>
           </div>
             <img 
               className={styles.movie_image}
