@@ -11,7 +11,8 @@ interface GetMoviesSuccessAction {
 }
 
 interface GetMoviesErrorAction {
-  type: typeof GET_MOVIES_ERROR
+  type: typeof GET_MOVIES_ERROR,
+  moviesErrorMessage: string
 }
 
 export type MoviesAction = GetMoviesRequestAction | GetMoviesSuccessAction | GetMoviesErrorAction

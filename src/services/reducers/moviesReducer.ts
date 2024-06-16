@@ -5,13 +5,15 @@ import { GET_MOVIES_ERROR, GET_MOVIES_REQUEST, GET_MOVIES_SUCCESS } from "../act
 type TMoviesState = {
   movies: TMovie[] | [],
   moviesRequest: boolean,
-  moviesFailed: boolean
+  moviesFailed: boolean,
+  moviesErrorMessage: null | string
 }
 
 const moviesInitialState : TMoviesState = {
   movies: [],
   moviesRequest: false,
-  moviesFailed: false
+  moviesFailed: false,
+  moviesErrorMessage: null
 }
 
 export const moviesReducer = (state = moviesInitialState, action: MoviesAction) => {
@@ -34,11 +36,11 @@ export const moviesReducer = (state = moviesInitialState, action: MoviesAction) 
       return {
         ...state,
         moviesRequest: false,
-        moviesFailed: true
+        moviesFailed: true,
+        moviesErrorMessage: action.moviesErrorMessage
       }
     }
     default: 
       return state
   }
-
 }

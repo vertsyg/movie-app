@@ -12,7 +12,7 @@ export const Header = () => {
             isActive ? styles.header_nav_p_active : styles.header_nav_p
           }
         >
-          Favorites
+          Избранное
         </NavLink>
       </nav>
     </header>

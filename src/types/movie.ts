@@ -1,3 +1,7 @@
+type Genre = {
+  name: string
+}
+
 export type TMovie = {
   id: number,
   name: string,
@@ -11,5 +15,5 @@ export type TMovie = {
     url: string,
     previewUrl: string
   },
-  genres?: Array<string>,
+  genres?: Array<Genre>,
 }

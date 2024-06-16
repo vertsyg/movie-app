@@ -16,6 +16,6 @@ export const getMovies = () => (dispatch: AppDispatch) => {
     })
     .catch(err => {
       console.error(err)
-      dispatch({type:GET_MOVIES_ERROR})
+      dispatch({type:GET_MOVIES_ERROR, moviesErrorMessage: err.message})
     })
 }

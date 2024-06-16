@@ -1,0 +1,21 @@
+.error {
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+}
+
+.error p {
+  font-size: 20px;
+}
+
+.error span {
+  color: #fdce25
+}
+
+.emoji {
+  font-size: 80px;
+}

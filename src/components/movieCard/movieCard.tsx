@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 import { TMovie } from "../../types/movie";
 
 import styles from './movieCard.module.css'
 
 export const MovieCard = (movie: TMovie) => {
   return (
-    <div 
-      key={movie.id}
+    <Link
+      to={`movie/${String(movie.id)}`}
       className={styles.movieCard}
     >
       {
@@ -16,6 +17,6 @@ export const MovieCard = (movie: TMovie) => {
         <span>{movie.rating.kp}</span> 
         <p>{movie.year}</p>
       </div>
-    </div>
+    </Link>
   )
 }

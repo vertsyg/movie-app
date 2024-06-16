@@ -7,6 +7,7 @@ import { NotFoundPage } from './pages/notFoundPage/notFoundPage'
 import { useEffect } from 'react'
 import { useAppDispatch } from './types/hooks'
 import { getMovies } from './services/actions/movies'
+import { MoviePage } from './pages/moviePage/moviePage'
 
 function App() {
   const dispatch = useAppDispatch()
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path='/' element={<MainPage/>}/>
           <Route path='/favorites' element={<FavoritePage/>}/>
+          <Route path='/movie/:movieId' element={<MoviePage/>}/>
           <Route path='*' element={<NotFoundPage/>} />
         </Routes>
       </main>
