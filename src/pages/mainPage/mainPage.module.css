@@ -8,3 +8,10 @@
   grid-gap: 24px;
   margin-top: 10px;
 }
+
+.genres_form {
+  height: 120px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #fdce25 #353535
+}

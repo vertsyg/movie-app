@@ -1,4 +1,4 @@
-type Genre = {
+export type Genre = {
   name: string
 }
 
