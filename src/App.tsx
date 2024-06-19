@@ -4,18 +4,9 @@ import { Header } from './components/header/header'
 import { MainPage } from './pages/mainPage/mainPage'
 import { FavoritePage } from './pages/favoritesPage/favoritesPage'
 import { NotFoundPage } from './pages/notFoundPage/notFoundPage'
-import { useEffect } from 'react'
-import { useAppDispatch } from './types/hooks'
-import { getMovies } from './services/actions/movies'
 import { MoviePage } from './pages/moviePage/moviePage'
 
 function App() {
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(getMovies())
-  }, [])
-
   return (
     <div className="container">
       <Header/>

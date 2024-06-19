@@ -7,7 +7,8 @@ interface GetMoviesRequestAction {
 
 interface GetMoviesSuccessAction {
   type: typeof GET_MOVIES_SUCCESS,
-  movies: TMovie[]
+  movies: TMovie[],
+  pages: number
 }
 
 interface GetMoviesErrorAction {

@@ -4,13 +4,15 @@ import { GET_MOVIES_ERROR, GET_MOVIES_REQUEST, GET_MOVIES_SUCCESS } from "../act
 
 type TMoviesState = {
   movies: TMovie[] | [],
+  pages: number,
   moviesRequest: boolean,
   moviesFailed: boolean,
-  moviesErrorMessage: null | string
+  moviesErrorMessage: null | string,
 }
 
 const moviesInitialState : TMoviesState = {
   movies: [],
+  pages: 0,
   moviesRequest: false,
   moviesFailed: false,
   moviesErrorMessage: null
@@ -29,7 +31,8 @@ export const moviesReducer = (state = moviesInitialState, action: MoviesAction) 
       return {
         ...state,
         moviesRequest: false,
-        movies: action.movies
+        movies: action.movies,
+        pages: action.pages
       }
     }
     case GET_MOVIES_ERROR: {

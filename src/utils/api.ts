@@ -9,10 +9,10 @@ export const request = async (endpoint:string, options?:RequestInit) => {
   return checkResponse(res)
 }
 
-// TODO: 'эндпоинт в зависимости от номера страницы
-export const fetchMovies = () => {
-  return request('movie?page=1&limit=50', HEADERS)
+export const fetchMovies = (page: number) => {
+  return request(`movie?page=${page}&limit=50`, HEADERS)
 };
+
 
 export const fetchMovie = (movieId : string) => {
   return request(`movie/${movieId}`, HEADERS)

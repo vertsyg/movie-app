@@ -5,13 +5,14 @@ export const GET_MOVIES_REQUEST = 'GET_MOVIES_REQUEST'
 export const GET_MOVIES_SUCCESS = 'GET_MOVIES_SUCCESS'
 export const GET_MOVIES_ERROR = 'GET_MOVIES_ERROR'
 
-export const getMovies = () => (dispatch: AppDispatch) => {
+export const getMovies = (page:number) => (dispatch: AppDispatch) => {
   dispatch({type: GET_MOVIES_REQUEST})
-  fetchMovies()
+  fetchMovies(page)
     .then(res => {
       dispatch({
         type: GET_MOVIES_SUCCESS,
-        movies: res.docs
+        movies: res.docs,
+        pages: res.pages
       })
     })
     .catch(err => {
