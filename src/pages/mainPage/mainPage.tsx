@@ -30,6 +30,7 @@ export const MainPage = () => {
     fetchGenres().then(genres => setGenres(genres))
   }, [currentPage, selectedGenres, years, rating])
 
+  // @ts-expect-error: 'event' is declared but its value is never read.
   const handlePageChange = (event: ChangeEvent<unknown>, page: number) => {
     setCurrentPage(page)
   }
@@ -43,10 +44,12 @@ export const MainPage = () => {
     }
   }
 
+  // @ts-expect-error: 'event' is declared but its value is never read.
   const handleYearsChange = (event: Event, newValue: number | number[]) => {
     setYears(newValue as number[]);
   }
 
+  // @ts-expect-error: 'event' is declared but its value is never read.
   const handleRatingChange = (event: Event, newValue: number | number[]) => {
     setRating(newValue as number[]);
   }
